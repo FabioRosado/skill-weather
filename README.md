@@ -1,43 +1,31 @@
-# opsdroid skill chat
+# opsdroid skill google it
 
-This skill adds some basic chatting abilities to [opsdroid](https://github.com/opsdroid/opsdroid).
+A skill for [opsdroid](https://github.com/opsdroid/opsdroid) to tell you the current weather
 
 ## Requirements
 
-None.
+You need an api-key from [OpenWeatherMap](https://openweathermap.org/api).
 
 ## Configuration
 
 ```yaml
-- name: chat
+skills:
+  - name: weather
+    # Required
+    city: London,UK    # For accuracy use {city},{country code}          
+    unit: metric       # Choose metric/imperial
+    api-key: 6fut9e098d8g90g
 ```
 
 ## Usage
 
-#### Tell me a joke
-Opsdroid will reply from a list of jokes
-> user: tell me a joke
+#### weather
+
+Googles "pomodoro technique".
+
+> user: weather
 >
-> opsdroid: I'm addicted to brake fluid, but I can stop whenever I want.
-
-#### How are you
-Opsdroid will reply from a list of answers
-> user: how are you
->
-> opsdroid: I'm good and you?
-
-#### What is your name
-Opsdroid will tell you its name
-> user: what is your name
->
-> opsdroid: I'm opsdroid and I'm here to help
-
-#### Others
-
-There are other things opsdroid can reply to. So why not give it a go and please do send me ideas and comments.
-
-
-
+> opsdroid: It's currently 18.63 degrees, 60% humidity in London and Clouds is forecasted for today
 
 ## License
 
