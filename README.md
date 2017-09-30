@@ -1,4 +1,4 @@
-# opsdroid skill google it
+# opsdroid skill weather
 
 A skill for [opsdroid](https://github.com/opsdroid/opsdroid) to tell you the current weather
 
@@ -21,11 +21,22 @@ skills:
 
 #### weather
 
-Googles "pomodoro technique".
+Opsdroid will tell you what's forecasted for today, how many degrees and percentage of humidity.
 
-> user: weather
+> user: how's the weather outside
 >
 > opsdroid: It's currently 18.63 degrees, 60% humidity in London and Clouds is forecasted for today
+
+_Note: You can also use the command  `what's the weather`._ 
+
+#### Is it hot/cold
+Opsdroid will tell you if you need to take a jacket with you 
+
+> user: is it cold today
+>
+> opsdroid: It's pretty hot today, it's currently 26.21 degrees outside
+
+_Note: You can also ask if it's `hot` or `nice outside`._
 
 ## License
 
