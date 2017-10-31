@@ -37,7 +37,3 @@ Opsdroid will tell you if you need to take a jacket with you
 > opsdroid: It's pretty hot today, it's currently 26.21 degrees outside
 
 _Note: You can also ask if it's `hot` or `nice outside`._
-
-## License
-
-GNU General Public License Version 3 (GPLv3)
