@@ -8,11 +8,12 @@ def get_weather(config):
     api_url = "weather?q={}&units={}&appid={}".format(
         config['city'], config['unit'], config['api-key'])
     weather_data = requests.get(base_url + api_url).json()
+
     return weather_data
 
 
 @match_regex(r'(?:how|what)(?:\'s|s| is) the weather', case_sensitive=False)
-async def weather(opsdroid, config, message):
+async def tell_weather(opsdroid, config, message):
     weather = get_weather(config)
     temp = weather['main']['temp']
     humidity = weather['main']['humidity']
@@ -30,12 +31,12 @@ async def cold_outside(opsdroid, config, message):
 
     if temp < 10 or config['unit'] == 'imperial' and temp < 50:
         await message.respond("It's pretty cold today! It's currently "
-                                  "{} degrees outside".format(temp))
-    elif temp > 10 and temp < 19 or temp > 50 and temp < 60:
+                              "{} degrees outside".format(temp))
+    elif 10 < temp < 19 or 50 < temp < 60:
         await message.respond("I think it's better if you take a "
                               "jacket with you today. It's currently "
                               "{} degrees outside".format(temp))
-    elif temp > 19 and temp < 23 or temp > 65 and temp < 75:
+    elif 19 < temp < 23 or 65 < temp < 75:
         await message.respond("It's not too bad actually, it's currently "
                               "{} degrees outside".format(temp))
     elif temp > 23 or temp > 75:
