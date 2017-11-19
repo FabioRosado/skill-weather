@@ -10,7 +10,7 @@ async def get_weather(config):
 
     async with aiohttp.ClientSession() as session:
         response = await session.get(base_url + api_url)
-
+        
     return await response.json()
 
 
@@ -21,7 +21,7 @@ async def tell_weather(opsdroid, config, message):
     temp = weather['main']['temp']
     humidity = weather['main']['humidity']
     city = weather['name']
-    status = weather['weather'][0]['main']
+    status = weather['weather'][0]['description'].title()
     
     await message.respond("It's currently {} degrees, {}% humidity in {} and {} is forecasted "
                           "for today".format(temp, humidity, city, status))
